@@ -1,5 +1,6 @@
 package com.service.inventory.client;
 
+import com.service.inventory.config.FeignConfig;
 import com.service.inventory.dto.ProductDTO;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -7,7 +8,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 @FeignClient(
         name = "products-service",
-        url = "${products.service.url}"
+        url = "${products.service.url}",
+        configuration = FeignConfig.class
 )
 public interface ProductClient {
 
