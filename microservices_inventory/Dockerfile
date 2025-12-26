@@ -7,7 +7,8 @@ RUN apk add --no-cache bash netcat-openbsd
 WORKDIR /app
 
 # Copiamos el JAR generado por Maven
-COPY target/inventory-0.0.1-SNAPSHOT.jar app.jar
+COPY target/*.jar app.jar
+
 
 # Copiamos el script de espera y damos permisos
 COPY wait-for-postgres.sh /app/wait-for-postgres.sh

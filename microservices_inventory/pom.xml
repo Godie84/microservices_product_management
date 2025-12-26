@@ -1,41 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
 		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-         https://maven.apache.org/xsd/maven-4.0.0.xsd">
+		 xsi:schemaLocation="
+           http://maven.apache.org/POM/4.0.0
+           https://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
 
-	<!-- Spring Boot estable -->
+	<!-- ========================= -->
+	<!-- Parent POM -->
+	<!-- ========================= -->
 	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.3.1</version>
-		<relativePath/>
+		<groupId>com.service</groupId>
+		<artifactId>microservices-parent</artifactId>
+		<version>1.0.0</version>
+		<relativePath>../pom.xml</relativePath>
 	</parent>
 
-	<groupId>com.service</groupId>
+	<!-- ========================= -->
+	<!-- Project info -->
+	<!-- ========================= -->
 	<artifactId>inventory</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
 	<name>inventory</name>
+	<description>Microservicio de gestión de inventario</description>
 
-	<properties>
-		<java.version>17</java.version>
-	</properties>
-
-	<!-- Spring Cloud BOM (FUERA de dependencies) -->
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>org.springframework.cloud</groupId>
-				<artifactId>spring-cloud-dependencies</artifactId>
-				<version>2023.0.4</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
-
+	<!-- ========================= -->
+	<!-- Dependencies -->
+	<!-- ========================= -->
 	<dependencies>
 
 		<!-- Web -->
@@ -69,6 +60,12 @@
 			<artifactId>spring-cloud-starter-openfeign</artifactId>
 		</dependency>
 
+		<!-- OpenAPI / Swagger UI -->
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+		</dependency>
+
 		<!-- Tests -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -76,23 +73,13 @@
 			<scope>test</scope>
 		</dependency>
 
-		<!-- OpenAPI / Swagger UI -->
-		<dependency>
-			<groupId>org.springdoc</groupId>
-			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
-			<version>2.2.0</version>
-		</dependency>
-
-
 	</dependencies>
 
+	<!-- ========================= -->
+	<!-- Build -->
+	<!-- ========================= -->
 	<build>
 		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.11.0</version>
-			</plugin>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
