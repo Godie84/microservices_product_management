@@ -1,5 +1,71 @@
 # microservices_product_management
 
+La aplicación es un microservicio REST simple para gestión de productos, con operaciones
+básicas de crear, listar y consultar productos. Está diseñado con arquitectura limpia,
+persistencia en PostgreSQL, y preparado para escalar y probar de manera profesional.
+
+1. Entidad Producto.
+
+Representa un producto en el sistema.
+
+Campos principales:
+- id: identificador único generado automáticamente.
+- nombre: nombre del producto.
+- precio: precio del producto.
+- descripcion: descripción opcional del producto.
+
+Se mapea automáticamente a una tabla en PostgreSQL usando JPA/Hibernate.
+Permite que Hibernate cree la tabla y las columnas automáticamente.
+
+2. Repositorio ProductoRepository
+
+Extiende JpaRepository, lo que proporciona:
+
+- Crear productos (save).
+- Buscar por ID (findById).
+- Listar todos (findAll).
+
+No necesita implementación propia, Spring Data JPA lo hace automáticamente.
+Actúa como puente entre la base de datos y la capa de servicio.
+
+3. Servicio ProductoService
+
+Contiene la lógica de negocio:
+
+- Crear productos (crearProducto).
+- Obtener producto por ID (obtenerPorId).
+- Listar todos los productos (listarTodos).
+
+Se asegura de que el controlador no acceda directamente al repositorio.
+Facilita mantenimiento, pruebas y escalabilidad del sistema.
+
+4. Controlador ProductoController
+
+Expone endpoints REST para interactuar con productos:
+
+- POST /productos → crear un nuevo producto.
+- GET /productos/{id} → obtener un producto por su ID.
+- GET /productos → listar todos los productos.
+
+Recibe solicitudes HTTP, llama al servicio y devuelve resultados en JSON.
+Garantiza una API limpia y RESTful para el microservicio.
+
+5. Funcionamiento global
+
+- Cliente hace solicitud HTTP al controlador.
+- Controlador recibe la solicitud y llama al servicio.
+- Servicio ejecuta la lógica de negocio y usa el repositorio para acceder a la base de datos.
+- Repositorio interactúa con PostgreSQL (persistencia de datos).
+- Controlador devuelve la respuesta al cliente en formato JSON.
+
+6. Tecnologías y buenas prácticas
+
+- Spring Boot: microservicio rápido, configurado automáticamente.
+- Spring Data JPA + Hibernate: mapeo objeto-relacional.
+- PostgreSQL: base de datos relacional.
+- Inyección de dependencias y separación de capas (Controller → Service → Repository).
+
+
 ## Arquitectura
 
 - Arquitectura de microservicios
