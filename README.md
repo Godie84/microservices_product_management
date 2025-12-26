@@ -35,6 +35,11 @@
 - Puerto 8081 libre (Inventory Service)
 - Puerto 5432 libre (PostgreSQL)
 
+## IMPORTANTE!
+Al subir el codigo fuente al repositorio GitHub, por el sistema operativo Windows, los archivos SQL, Pom.xml, .sh y otros 
+pueden cambiar su formato de fin de línea (CRLF en lugar de LF). Esto puede causar problemas al inicializar los servicios en el contenedor Docker.
+
+Una manera practica para solucionar este inconveniente es cambiar la separación de línea en tu editor de código (VSCode, IntelliJ, etc.) a LF y guardar los archivos nuevamente antes de construir las imágenes Docker.
 
 ## Ejecución
 
