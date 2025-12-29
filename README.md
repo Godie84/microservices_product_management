@@ -71,6 +71,13 @@ Se ejecuta en su propio contenedor Docker.
 
 - Clonar el repositorio
 
+## Repositorio GitHub:
+El repositorio contiene todo el código fuente, archivos de configuración y scripts necesarios para ejecutar el proyecto.
+Este repositorio cuenta con la siguiente estructura:
+main
+develop
+features/api-key-security
+
 ```bash
 git clone https://github.com/Godie84/microservices_product_management.git
 
