@@ -1,4 +1,4 @@
-package com.service.products.security;
+package com.service.inventory.security;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
