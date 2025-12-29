@@ -140,9 +140,10 @@ Se ejecuta en su propio contenedor Docker.
 ## Repositorio GitHub:
 El repositorio contiene todo el código fuente, archivos de configuración y scripts necesarios para ejecutar el proyecto.
 Este repositorio cuenta con la siguiente estructura:
-main
-develop
-features/api-key-security
+
+- main: Todas las fucionalidades estables
+- develop: Todas las funcionalidades en desarrollo
+- features/api-key-security: Desarrollo de s funcionalidad eguridad mediante API Key
 
 ```bash
 git clone https://github.com/Godie84/microservices_product_management.git
